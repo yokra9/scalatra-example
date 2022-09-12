@@ -22,6 +22,12 @@ lazy val root = (project in file("."))
       "org.http4s" %% "http4s-ember-client" % http4sVersion % Test
     ),
     assembly / mainClass := Some("Main"),
+    ThisBuild / assemblyMergeStrategy := {
+      case "module-info.class" => MergeStrategy.discard
+      case x =>
+        val oldStrategy = (assembly / assemblyMergeStrategy).value
+        oldStrategy(x)
+    },
     Docker / packageName := "sample-webapp",
     Docker / version := "2.0.0",
     dockerBaseImage := "eclipse-temurin:latest",
