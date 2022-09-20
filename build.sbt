@@ -13,7 +13,7 @@ lazy val root = (project in file("."))
       "org.eclipse.jetty" % "jetty-webapp" % "9.4.48.v20220622",
       "javax.servlet" % "javax.servlet-api" % "4.0.1",
       // for Runtime
-      "ch.qos.logback" % "logback-classic" % "1.4.0" % Runtime,
+      "ch.qos.logback" % "logback-classic" % "1.4.1" % Runtime,
       // for Tests
       "org.scalatra" %% "scalatra-scalatest" % ScalatraVersion % Test,
       "org.scalatest" %% "scalatest" % "3.2.13" % Test,
