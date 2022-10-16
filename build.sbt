@@ -3,7 +3,7 @@ val http4sVersion = "0.23.16"
 
 lazy val root = (project in file("."))
   .settings(
-    ThisBuild / scalaVersion := "2.13.8",
+    ThisBuild / scalaVersion := "2.13.10",
     ThisBuild / organization := "com.github.yokra9",
     name := "scalatra-example",
     version := "0.1.0-SNAPSHOT",
