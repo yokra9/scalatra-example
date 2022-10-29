@@ -1,5 +1,5 @@
 val ScalatraVersion = "2.8.+"
-val http4sVersion = "0.23.15"
+val http4sVersion = "0.23.16"
 
 lazy val root = (project in file("."))
   .settings(
@@ -10,18 +10,24 @@ lazy val root = (project in file("."))
     scalacOptions := Seq("-unchecked", "-deprecation"),
     libraryDependencies ++= Seq(
       "org.scalatra" %% "scalatra" % ScalatraVersion,
-      "org.eclipse.jetty" % "jetty-webapp" % "9.4.35.v20201120",
-      "javax.servlet" % "javax.servlet-api" % "3.1.0",
+      "org.eclipse.jetty" % "jetty-webapp" % "9.4.49.v20220914",
+      "javax.servlet" % "javax.servlet-api" % "4.0.1",
       // for Runtime
-      "ch.qos.logback" % "logback-classic" % "1.2.3" % Runtime,
+      "ch.qos.logback" % "logback-classic" % "1.4.4" % Runtime,
       // for Tests
       "org.scalatra" %% "scalatra-scalatest" % ScalatraVersion % Test,
-      "org.scalatest" %% "scalatest" % "3.2.13" % Test,
+      "org.scalatest" %% "scalatest" % "3.2.14" % Test,
       "org.http4s" %% "http4s-dsl" % http4sVersion % Test,
       "org.http4s" %% "http4s-ember-server" % http4sVersion % Test,
       "org.http4s" %% "http4s-ember-client" % http4sVersion % Test
     ),
     assembly / mainClass := Some("Main"),
+    ThisBuild / assemblyMergeStrategy := {
+      case "module-info.class" => MergeStrategy.discard
+      case x =>
+        val oldStrategy = (assembly / assemblyMergeStrategy).value
+        oldStrategy(x)
+    },
     Docker / packageName := "sample-webapp",
     Docker / version := "2.0.0",
     dockerBaseImage := "eclipse-temurin:latest",
