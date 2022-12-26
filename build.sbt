@@ -10,7 +10,7 @@ lazy val root = (project in file("."))
     scalacOptions := Seq("-unchecked", "-deprecation"),
     libraryDependencies ++= Seq(
       "org.scalatra" %% "scalatra" % ScalatraVersion,
-      "org.eclipse.jetty" % "jetty-webapp" % "11.0.13",
+      "org.eclipse.jetty" % "jetty-webapp" % "9.4.50.v20221201",
       "javax.servlet" % "javax.servlet-api" % "4.0.1",
       // for Runtime
       "ch.qos.logback" % "logback-classic" % "1.4.5" % Runtime,
