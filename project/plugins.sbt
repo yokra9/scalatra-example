@@ -1,5 +1,5 @@
 // for Scalatra
-addSbtPlugin("org.playframework.twirl" % "sbt-twirl" % "2.0.3")
+addSbtPlugin("org.playframework.twirl" % "sbt-twirl" % "2.0.4")
 addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "4.2.4")
 
 // for Dockerize
