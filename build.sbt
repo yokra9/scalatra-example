@@ -15,7 +15,7 @@ lazy val root = (project in file("."))
       "ch.qos.logback" % "logback-classic" % "1.5.6" % Runtime,
       // for Tests
       "org.scalatra" %% "scalatra-scalatest" % ScalatraVersion % Test,
-      "org.scalatest" %% "scalatest" % "3.2.18" % Test,
+      "org.scalatest" %% "scalatest" % "3.2.19" % Test,
       "org.http4s" %% "http4s-dsl" % http4sVersion % Test,
       "org.http4s" %% "http4s-ember-server" % http4sVersion % Test,
       "org.http4s" %% "http4s-ember-client" % http4sVersion % Test
