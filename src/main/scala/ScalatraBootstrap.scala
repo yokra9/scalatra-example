@@ -1,5 +1,5 @@
 import com.github.yokra9.ScalatraExample._
-import javax.servlet.ServletContext
+import jakarta.servlet.ServletContext
 import org.scalatra._
 
 class ScalatraBootstrap extends LifeCycle {

@@ -1,20 +1,21 @@
-val ScalatraVersion = "2.8.+"
+val ScalatraVersion = "3.0.0"
 val http4sVersion = "0.23.27"
 
 lazy val root = (project in file("."))
   .settings(
-    ThisBuild / scalaVersion := "2.13.14",
+    ThisBuild / scalaVersion := "3.3.3",
     ThisBuild / organization := "com.github.yokra9",
     name := "scalatra-example",
     version := "0.1.0-SNAPSHOT",
     scalacOptions := Seq("-unchecked", "-deprecation"),
     libraryDependencies ++= Seq(
-      "org.scalatra" %% "scalatra" % ScalatraVersion,
-      "org.eclipse.jetty" % "jetty-webapp" % "10.0.23",
+      "org.scalatra" %% "scalatra-jakarta" % ScalatraVersion,
+      "org.eclipse.jetty" % "jetty-webapp" % "11.0.23" % "container;compile",
+      "jakarta.servlet" % "jakarta.servlet-api" % "5.0.0" % "provided",
       // for Runtime
       "ch.qos.logback" % "logback-classic" % "1.5.7" % Runtime,
       // for Tests
-      "org.scalatra" %% "scalatra-scalatest" % ScalatraVersion % Test,
+      "org.scalatra" %% "scalatra-scalatest-jakarta" % ScalatraVersion % Test,
       "org.scalatest" %% "scalatest" % "3.2.19" % Test,
       "org.http4s" %% "http4s-dsl" % http4sVersion % Test,
       "org.http4s" %% "http4s-ember-server" % http4sVersion % Test,
