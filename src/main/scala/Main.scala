@@ -1,6 +1,6 @@
 import org.eclipse.jetty.server.Server
-import org.eclipse.jetty.servlet.{DefaultServlet, ServletContextHandler}
-import org.eclipse.jetty.webapp.WebAppContext
+import org.eclipse.jetty.ee10.servlet.{DefaultServlet, ServletContextHandler}
+import org.eclipse.jetty.ee10.webapp.WebAppContext
 import org.scalatra.servlet.ScalatraListener
 import org.slf4j.{Logger, LoggerFactory}
 
@@ -14,7 +14,9 @@ object Main {
   def start(): Server = {
     val context = new WebAppContext()
     context.setContextPath("/")
-    context.setResourceBase("/src/main/webapp")
+    context.setBaseResourceAsString(
+      this.getClass.getResource("Main.class").toURI.resolve(".").toString
+    )
     context.addEventListener(new ScalatraListener)
     context.addServlet(classOf[DefaultServlet], "/")
 

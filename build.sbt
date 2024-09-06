@@ -1,5 +1,6 @@
-val ScalatraVersion = "3.0.0"
+val ScalatraVersion = "3.1.0"
 val http4sVersion = "0.23.27"
+val jettyVersion = "12.0.12"
 
 lazy val root = (project in file("."))
   .settings(
@@ -10,8 +11,10 @@ lazy val root = (project in file("."))
     scalacOptions := Seq("-unchecked", "-deprecation"),
     libraryDependencies ++= Seq(
       "org.scalatra" %% "scalatra-jakarta" % ScalatraVersion,
-      "org.eclipse.jetty" % "jetty-webapp" % "11.0.24" % "container;compile",
-      "jakarta.servlet" % "jakarta.servlet-api" % "5.0.0" % "provided",
+      "org.eclipse.jetty" % "jetty-server" % jettyVersion % "container;compile",
+      "org.eclipse.jetty.ee10" % "jetty-ee10-servlet" % jettyVersion % "container;compile",
+      "org.eclipse.jetty.ee10" % "jetty-ee10-webapp" % jettyVersion % "container;compile",
+      "jakarta.servlet" % "jakarta.servlet-api" % "6.1.0" % "provided",
       // for Runtime
       "ch.qos.logback" % "logback-classic" % "1.5.7" % Runtime,
       // for Tests
@@ -38,6 +41,6 @@ lazy val root = (project in file("."))
   )
 
 enablePlugins(SbtTwirl)
-enablePlugins(JettyPlugin)
+enablePlugins(ContainerPlugin)
 enablePlugins(JavaAppPackaging)
 enablePlugins(DockerPlugin)
