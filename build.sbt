@@ -25,7 +25,7 @@ lazy val root = (project in file("."))
       "org.http4s" %% "http4s-ember-client" % http4sVersion % Test
     ),
     dependencyOverrides ++= Seq(
-      "org.scala-lang.modules" %% "scala-xml" % "2.1.0"
+      "org.scala-lang.modules" %% "scala-xml" % "2.3.0"
     ),
     assembly / mainClass := Some("Main"),
     ThisBuild / assemblyMergeStrategy := {
