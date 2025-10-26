@@ -22,7 +22,7 @@ object Main {
 
     val port = sys.props.getOrElse("http.port", "8080").toIntOption match {
       case Some(port) => port
-      case None => {
+      case None       => {
         logger.error("システムプロパティ http.port には整数値を指定してください")
         8080
       }
