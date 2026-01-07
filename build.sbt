@@ -16,7 +16,7 @@ lazy val root = (project in file("."))
       "org.eclipse.jetty.ee10" % "jetty-ee10-webapp" % jettyVersion % "container;compile",
       "jakarta.servlet" % "jakarta.servlet-api" % "6.1.0" % "provided",
       // for Runtime
-      "ch.qos.logback" % "logback-classic" % "1.5.23" % Runtime,
+      "ch.qos.logback" % "logback-classic" % "1.5.24" % Runtime,
       // for Tests
       "org.scalatra" %% "scalatra-scalatest-jakarta" % ScalatraVersion % Test,
       "org.scalatest" %% "scalatest" % "3.2.19" % Test,
