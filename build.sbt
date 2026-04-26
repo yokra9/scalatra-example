@@ -1,5 +1,5 @@
 val ScalatraVersion = "3.1.2"
-val http4sVersion = "0.23.33"
+val http4sVersion = "0.23.34"
 val jettyVersion = "12.1.8"
 
 lazy val root = (project in file("."))
