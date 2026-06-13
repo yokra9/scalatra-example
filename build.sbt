@@ -4,7 +4,7 @@ val jettyVersion = "12.1.10"
 
 lazy val root = (project in file("."))
   .settings(
-    ThisBuild / scalaVersion := "3.3.7",
+    ThisBuild / scalaVersion := "3.3.8",
     ThisBuild / organization := "com.github.yokra9",
     name := "scalatra-example",
     version := "0.1.0-SNAPSHOT",
