@@ -1,4 +1,4 @@
-val ScalatraVersion = "3.2.0"
+val ScalatraVersion = "3.2.1"
 val http4sVersion = "0.23.36"
 val jettyVersion = "12.1.12"
 
