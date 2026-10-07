@@ -4,7 +4,7 @@ addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "4.2.5")
 
 // for Dockerize
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "2.5.0")
-addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.11.7")
+addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.12.0")
 
 // for Tests
 addSbtPlugin("org.scoverage" % "sbt-scoverage" % "2.4.4")
