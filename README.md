@@ -15,7 +15,7 @@
 sbt test
 
 # カバレッジを測定してレポートを出力
-sbt clean coverage test coverageReport
+sbt "clean;coverageOn;test;coverageReport;coverageOff"
 
 # Docker イメージのビルド
 sbt Docker/publishLocal
